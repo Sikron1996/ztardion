@@ -3,10 +3,23 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #E3A200;
-    color: #222;
+    overflow-x: hidden;
+}
+
+.bg {
+    background-image: url('IMG_1045.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.15;
+    position: fixed;
+    top:0;left:0;right:0;bottom:0;
+    z-index: 0;
 }
 
 .wrapper {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     margin: 40px auto;
     text-align: center;
@@ -19,45 +32,71 @@ body {
 }
 
 .card {
-    background: rgba(255,255,255,0.25);
-    padding: 20px;
-    border-radius: 14px;
-    margin-bottom: 40px;
+    background: rgba(0,0,0,0.25);
+    padding: 25px;
+    border-radius: 16px;
+    color: #fff;
 }
 
-.progress-box {
-    margin-top: 20px;
+.mint-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.mint-box span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+.mint-box strong {
+    display: block;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.progress-wrapper {
+    margin-top: 25px;
+}
+
+.prog-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+
+.prog-num {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
 }
 
 .progress-line {
     width: 100%;
-    height: 18px;
-    background: #00000033;
+    height: 20px;
+    background: #00000055;
     border-radius: 10px;
+    margin-top: 10px;
     overflow: hidden;
 }
 
 .bar {
-    height: 18px;
-    width: 25%;
-    background: #00ff66;
+    height: 20px;
+    width: 0%;
+    background: #ffcc33;
+    animation: fillbar 3s ease forwards;
 }
 
-.subtitle {
-    font-size: 26px;
-    margin-bottom: 10px;
+@keyframes fillbar {
+    from { width: 0%; }
+    to { width: 25%; }
 }
 
-.txlist {
-    background: rgba(255,255,255,0.25);
-    padding: 20px;
-    border-radius: 14px;
-}
-
-.txitem {
-    padding: 8px 0;
-    border-bottom: 1px solid #333;
-}
-.txitem:last-child {
-    border-bottom: none;
+.mint-btn {
+    margin-top: 25px;
+    padding: 12px 40px;
+    background: #ffcc33;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
 }
