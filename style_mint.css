@@ -1,0 +1,139 @@
+/* Variant A premium mint style */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000;
+  color: #f3e6c0;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #1a1202, #000 85%);
+  z-index: 0;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('IMG_1045.png') center/55% no-repeat;
+  opacity: 0.18;
+}
+
+.mint-card {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 40px auto;
+  padding: 24px 26px;
+  border-radius: 26px;
+  background: rgba(10, 6, 2, 0.9);
+  border: 1px solid rgba(255, 210, 110, 0.25);
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+.mint-heading {
+  font-size: 26px;
+  margin-bottom: 18px;
+  color: #fff4ce;
+}
+
+/* STEP BLOCKS */
+.step-box {
+  border: 1px solid rgba(255, 210, 110, 0.25);
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: rgba(255, 220, 100, 0.05);
+}
+
+.step-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #ffd875;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.step-text {
+  font-size: 14px;
+  color: #f2e3c0;
+}
+
+/* Quantity */
+.quantity-label {
+  margin-right: 6px;
+}
+
+#qty {
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #d4b16d;
+  width: 65px;
+  background: #0f0b05;
+  color: #f7eccc;
+  text-align: center;
+}
+
+.total-line {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.total-value {
+  font-weight: 700;
+  color: #fff5d1;
+}
+
+/* Address copy */
+.address-box {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(5, 35, 10, 0.9);
+  border: 1px solid #2cf58c;
+  color: #b0ffd1;
+  font-size: 14px;
+  cursor: pointer;
+  word-break: break-all;
+}
+
+.copy-status {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.copy-status.ok {
+  color: #22ff88;
+}
+
+/* IMPORTANT */
+.important {
+  font-size: 12px;
+  color: #ffeec8;
+  margin-top: 16px;
+}
+
+/* BUTTON */
+.minted-btn {
+  margin-top: 22px;
+  padding: 12px 36px;
+  background: #22c958;
+  color: #06270c;
+  border: none;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 640px) {
+  .mint-card {
+    margin: 16px;
+    padding-inline: 16px;
+  }
+}
