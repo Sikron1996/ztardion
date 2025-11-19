@@ -1,98 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ZTARDIO • Mint</title>
-  <link rel="stylesheet" href="style_mint.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mint ZTARDIO</title>
+<link rel="stylesheet" href="style_mint.css" />
 </head>
+
 <body>
-  <div class="bg"></div>
 
-  <div class="mint-card">
-    <h1 class="mint-heading">How to mint a ZTARDIO</h1>
+<div class="bg"></div>
 
-    <div class="step">
-      <span class="step-label">STEP 1</span>
-      <span class="step-text">
-        Create a Zcash wallet that supports transparent addresses (t-address).
-      </span>
+<div class="mint-card">
+
+  <h2 class="mint-heading">How to mint a ZTARDIO</h2>
+
+  <!-- STEP 1 -->
+  <div class="step-box">
+    <div class="step-label">STEP 1</div>
+    <div class="step-text">
+      Create a Zcash wallet that supports transparent addresses (t-address).
     </div>
-
-    <div class="step">
-      <span class="step-label">STEP 2</span>
-      <span class="step-text">
-        Deposit <span class="zcash">$ZEC</span> from any exchange or wallet to your Zcash wallet.
-      </span>
-    </div>
-
-    <div class="step">
-      <span class="step-label">STEP 3</span>
-      <span class="step-text">
-        Choose how many NFTs you want to mint and send the exact amount of ZEC from your wallet.
-        <br />
-        <span class="qty-label">Quantity:</span>
-        <input id="qty" type="number" min="1" max="100" value="1" />
-        <div class="total-line">
-          Total to send:
-          <span id="total" class="total-value">0.005 $ZEC</span>
-        </div>
-      </span>
-    </div>
-
-    <div class="step">
-      <span class="step-label">STEP 4</span>
-      <span class="step-text">
-        Send exactly the amount shown above to (click to copy):
-        <div class="address-pill" id="addr-pill">t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6</div>
-        <div id="copy-status" class="copy-status"></div>
-      </span>
-    </div>
-
-    <div class="step">
-      <span class="step-label">STEP 5</span>
-      <span class="step-text">
-        Sit back and relax. Your ZTARDIO mint will be processed to the address you sent from.
-        Please be patient, mints are processed in batches.
-      </span>
-    </div>
-
-    <p class="important">
-      <strong>Important:</strong>
-      always send <span class="zcash">$ZEC</span> from a wallet you control.
-      Do not send directly from exchanges or custodial wallets – otherwise the NFT cannot be minted back to your address.
-    </p>
-
-    <button class="minted-btn">I MINTED</button>
   </div>
 
-  <script>
-    const PRICE = 0.005;
-    const qtyInput = document.getElementById('qty');
-    const totalEl = document.getElementById('total');
-    const addrPill = document.getElementById('addr-pill');
-    const copyStatus = document.getElementById('copy-status');
+  <!-- STEP 2 -->
+  <div class="step-box">
+    <div class="step-label">STEP 2</div>
+    <div class="step-text">
+      Deposit <b>$ZEC</b> from any exchange or wallet to your Zcash wallet.
+    </div>
+  </div>
 
-    function updateTotal() {
-      const q = Math.max(1, parseInt(qtyInput.value || '1', 10));
-      qtyInput.value = q;
-      const total = (q * PRICE).toFixed(3);
-      totalEl.textContent = total + ' $ZEC';
+  <!-- STEP 3 -->
+  <div class="step-box">
+    <div class="step-label">STEP 3</div>
+    <div class="step-text">
+      Choose how many NFTs you want to mint and send the exact amount of ZEC from your wallet.
+      <br><br>
+      <label class="quantity-label">Quantity:</label>
+      <input id="qty" type="number" min="1" value="1" />
+      <div class="total-line">
+        Total to send: <span id="total" class="total-value">0.005 $ZEC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-box">
+    <div class="step-label">STEP 4</div>
+    <div class="step-text">
+      Send exactly the amount shown above to (click to copy):
+      <div id="zecAddress" class="address-box">
+        t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6
+      </div>
+      <div id="copyStatus" class="copy-status"></div>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step-box">
+    <div class="step-label">STEP 5</div>
+    <div class="step-text">
+      Sit back and relax. Your ZTARDIO mint will be processed to the address you sent from.  
+      Please be patient, mints are processed in batches.
+    </div>
+  </div>
+
+  <!-- IMPORTANT -->
+  <div class="important">
+    <b>Important:</b> always send <b>$ZEC</b> from a wallet you control.  
+    Do not send directly from exchanges or custodial wallets – otherwise the NFT cannot be minted back to your address.
+  </div>
+
+  <!-- BUTTON -->
+  <button class="minted-btn">I MINTED</button>
+
+</div>
+
+<script>
+  // Update total price
+  const qty = document.getElementById("qty");
+  const total = document.getElementById("total");
+  const price = 0.005;
+
+  qty.addEventListener("input", () => {
+    const n = Math.max(1, Number(qty.value));
+    total.textContent = (n * price).toFixed(3) + " $ZEC";
+  });
+
+  // Copy address
+  const addressBox = document.getElementById("zecAddress");
+  const copyStatus = document.getElementById("copyStatus");
+
+  addressBox.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(addressBox.textContent.trim());
+      copyStatus.textContent = "✔ Copied!";
+      copyStatus.classList.add("ok");
+
+      setTimeout(() => {
+        copyStatus.textContent = "";
+        copyStatus.classList.remove("ok");
+      }, 1500);
+    } catch {
+      copyStatus.textContent = "Failed to copy";
     }
+  });
+</script>
 
-    qtyInput.addEventListener('input', updateTotal);
-    updateTotal();
-
-    addrPill.addEventListener('click', async () => {
-      copyStatus.textContent = '';
-      try {
-        await navigator.clipboard.writeText('t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6');
-        copyStatus.textContent = 'Address copied ✅';
-        copyStatus.classList.add('ok');
-      } catch (e) {
-        copyStatus.textContent = 'Could not copy address 😔';
-        copyStatus.classList.remove('ok');
-      }
-    });
-  </script>
 </body>
 </html>
