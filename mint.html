@@ -11,6 +11,23 @@
 
 <div class="bg"></div>
 
+<!-- ====================== TOP HEADER ===================== -->
+<div class="top-header">
+  <div class="logo-box">
+    <div class="logo-icon">Z</div>
+    <div class="logo-texts">
+      <div class="logo-title">ZTARDIO</div>
+      <div class="logo-sub">ZCASH • INSCRIPTIONS</div>
+    </div>
+  </div>
+
+  <div class="top-buttons">
+    <a href="/" class="top-btn">← Back to main</a>
+    <a href="https://x.com" target="_blank" class="top-btn">Follow on X</a>
+  </div>
+</div>
+<!-- ======================================================== -->
+
 <div class="mint-card">
 
   <h2 class="mint-heading">How to mint a ZTARDIO</h2>
@@ -35,7 +52,7 @@
   <div class="step-box">
     <div class="step-label">STEP 3</div>
     <div class="step-text">
-      Choose how many NFTs you want to mint and send the exact amount of ZEC from your wallet.
+      Choose how many NFTs you want to mint and send the exact amount of ZEC.
       <br><br>
       <label class="quantity-label">Quantity:</label>
       <input id="qty" type="number" min="1" value="1" />
@@ -49,7 +66,7 @@
   <div class="step-box">
     <div class="step-label">STEP 4</div>
     <div class="step-text">
-      Send exactly the amount shown above to (click to copy):
+      Send exactly the amount above to (click to copy):
       <div id="zecAddress" class="address-box">
         t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6
       </div>
@@ -61,24 +78,22 @@
   <div class="step-box">
     <div class="step-label">STEP 5</div>
     <div class="step-text">
-      Sit back and relax. Your ZTARDIO mint will be processed to the address you sent from.  
-      Please be patient, mints are processed in batches.
+      Sit back and relax. Your ZTARDIO mint will be processed to the address you sent from.
+      Mints are processed in batches.
     </div>
   </div>
 
-  <!-- IMPORTANT -->
   <div class="important">
-    <b>Important:</b> always send <b>$ZEC</b> from a wallet you control.  
-    Do not send directly from exchanges or custodial wallets – otherwise the NFT cannot be minted back to your address.
+    <b>Important:</b> always send $ZEC from a wallet YOU control.  
+    Do not send from exchanges or custodial wallets.
   </div>
 
-  <!-- BUTTON -->
   <button class="minted-btn">I MINTED</button>
 
 </div>
 
 <script>
-  // Update total price
+  // PRICE CALCULATION
   const qty = document.getElementById("qty");
   const total = document.getElementById("total");
   const price = 0.005;
@@ -88,7 +103,7 @@
     total.textContent = (n * price).toFixed(3) + " $ZEC";
   });
 
-  // Copy address
+  // COPY ADDRESS
   const addressBox = document.getElementById("zecAddress");
   const copyStatus = document.getElementById("copyStatus");
 
@@ -103,7 +118,7 @@
         copyStatus.classList.remove("ok");
       }, 1500);
     } catch {
-      copyStatus.textContent = "Failed to copy";
+      copyStatus.textContent = "Copy failed";
     }
   });
 </script>
