@@ -1,68 +1,98 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ZTARDIO • Mint</title>
-<link rel="stylesheet" href="style.css">
-<style>
-.mint-container{
-    max-width:700px;
-    margin:60px auto;
-    padding:30px;
-    background:rgba(0,0,0,0.45);
-    border-radius:20px;
-    color:white;
-    text-align:center;
-}
-.mint-title{
-    font-size:42px;
-    font-weight:900;
-    margin-bottom:20px;
-}
-.input-box{
-    margin-top:25px;
-}
-input{
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    width:200px;
-    font-size:18px;
-    text-align:center;
-}
-.big-mint-btn{
-    margin-top:35px;
-    background:#ffcc33;
-    padding:15px 50px;
-    border:none;
-    border-radius:16px;
-    font-size:26px;
-    font-weight:bold;
-}
-a.back{
-    display:block;
-    margin-top:30px;
-    color:white;
-    opacity:0.7;
-    text-decoration:none;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>ZTARDIO • Mint</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="bg"></div>
-<div class="mint-container">
-    <div class="mint-title">Mint ZTARDIO</div>
+  <div class="bg"></div>
 
-    <p>Price: <strong>0.008 ZEC</strong></p>
-    <p>Available: <strong>8425 / 10000</strong></p>
+  <div class="mint-card">
+    <h1 class="mint-heading">How to mint a ZTARDIO</h1>
 
-    <div class="input-box">
-        <input type="number" min="1" max="20" value="1">
+    <div class="step">
+      <span class="step-label">STEP 1</span>
+      <span class="step-text">
+        Create a Zcash wallet that supports transparent addresses (t-address).
+      </span>
     </div>
 
-    <button class="big-mint-btn">Confirm Mint</button>
+    <div class="step">
+      <span class="step-label">STEP 2</span>
+      <span class="step-text">
+        Deposit <span class="zcash">$ZEC</span> from any exchange or wallet to your Zcash wallet.
+      </span>
+    </div>
 
-    <a href="index.html" class="back">← Back to Home</a>
-</div>
+    <div class="step">
+      <span class="step-label">STEP 3</span>
+      <span class="step-text">
+        Choose how many NFTs you want to mint and send the exact amount of ZEC from your wallet.
+        <br />
+        <span class="qty-label">Quantity:</span>
+        <input id="qty" type="number" min="1" max="100" value="1" />
+        <div class="total-line">
+          Total to send:
+          <span id="total" class="total-value">0.005 $ZEC</span>
+        </div>
+      </span>
+    </div>
+
+    <div class="step">
+      <span class="step-label">STEP 4</span>
+      <span class="step-text">
+        Send exactly the amount shown above to (click to copy):
+        <div class="address-pill" id="addr-pill">t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6</div>
+        <div id="copy-status" class="copy-status"></div>
+      </span>
+    </div>
+
+    <div class="step">
+      <span class="step-label">STEP 5</span>
+      <span class="step-text">
+        Sit back and relax. Your ZTARDIO mint will be processed to the address you sent from.
+        Please be patient, mints are processed in batches.
+      </span>
+    </div>
+
+    <p class="important">
+      <strong>Important:</strong>
+      always send <span class="zcash">$ZEC</span> from a wallet you control.
+      Do not send directly from exchanges or custodial wallets – otherwise the NFT cannot be minted back to your address.
+    </p>
+
+    <button class="minted-btn">I MINTED</button>
+  </div>
+
+  <script>
+    const PRICE = 0.005;
+    const qtyInput = document.getElementById('qty');
+    const totalEl = document.getElementById('total');
+    const addrPill = document.getElementById('addr-pill');
+    const copyStatus = document.getElementById('copy-status');
+
+    function updateTotal() {
+      const q = Math.max(1, parseInt(qtyInput.value || '1', 10));
+      qtyInput.value = q;
+      const total = (q * PRICE).toFixed(3);
+      totalEl.textContent = total + ' $ZEC';
+    }
+
+    qtyInput.addEventListener('input', updateTotal);
+    updateTotal();
+
+    addrPill.addEventListener('click', async () => {
+      copyStatus.textContent = '';
+      try {
+        await navigator.clipboard.writeText('t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6');
+        copyStatus.textContent = 'Address copied ✅';
+        copyStatus.classList.add('ok');
+      } catch (e) {
+        copyStatus.textContent = 'Could not copy address 😔';
+        copyStatus.classList.remove('ok');
+      }
+    });
+  </script>
 </body>
 </html>
