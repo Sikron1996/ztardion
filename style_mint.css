@@ -1,37 +1,104 @@
-/* Variant A premium mint style */
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #000;
-  color: #f3e6c0;
-}
-
+/* ========== BACKGROUND PREMIUM (Variant C) ========== */
 .bg {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top, #1a1202, #000 85%);
   z-index: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('IMG_1045.png') center/60% no-repeat;
+  opacity: 0.22;
+  filter: blur(6px);
 }
 
 .bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('IMG_1045.png') center/55% no-repeat;
-  opacity: 0.18;
+  background: radial-gradient(circle at top, rgba(0,0,0,0.6), #000 90%);
+  mix-blend-mode: multiply;
 }
 
-.mint-card {
+/* ========== TOP HEADER ========== */
+.top-header {
+  max-width: 900px;
+  margin: 20px auto 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   position: relative;
-  z-index: 2;
+  z-index: 5;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f7c437;
+  color: #1a0f00;
+  font-size: 30px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff5d1;
+}
+
+.logo-sub {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #d0c3a0;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.top-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 210, 110, 0.25);
+  background: rgba(255, 230, 150, 0.05);
+  color: #ffda6c;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.top-btn:hover {
+  border-color: #ffd36b;
+  background: rgba(255, 220, 120, 0.12);
+}
+
+/* ========== MINT CARD ========== */
+.mint-card {
   max-width: 780px;
-  margin: 40px auto;
-  padding: 24px 26px;
+  margin: 20px auto 40px;
+  padding: 26px;
   border-radius: 26px;
   background: rgba(10, 6, 2, 0.9);
   border: 1px solid rgba(255, 210, 110, 0.25);
-  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  position: relative;
 }
 
 .mint-heading {
@@ -54,86 +121,67 @@ body {
   letter-spacing: 0.2em;
   color: #ffd875;
   font-weight: 700;
-  margin-bottom: 6px;
-  display: inline-block;
 }
 
 .step-text {
+  margin-top: 4px;
   font-size: 14px;
   color: #f2e3c0;
 }
 
 /* Quantity */
-.quantity-label {
-  margin-right: 6px;
-}
-
 #qty {
   padding: 6px;
   border-radius: 12px;
+  width: 70px;
   border: 1px solid #d4b16d;
-  width: 65px;
   background: #0f0b05;
-  color: #f7eccc;
+  color: #fff1c9;
   text-align: center;
 }
 
+/* Total */
 .total-line {
   margin-top: 10px;
-  font-size: 15px;
+  color: #fff1c9;
 }
 
-.total-value {
-  font-weight: 700;
-  color: #fff5d1;
-}
-
-/* Address copy */
+/* ADDRESS */
 .address-box {
   margin-top: 10px;
   padding: 10px 14px;
   border-radius: 999px;
   background: rgba(5, 35, 10, 0.9);
-  border: 1px solid #2cf58c;
+  border: 1px solid #19ff72;
   color: #b0ffd1;
-  font-size: 14px;
-  cursor: pointer;
+  font-size: 15px;
   word-break: break-all;
-}
-
-.copy-status {
-  margin-top: 5px;
-  font-size: 12px;
+  cursor: pointer;
 }
 
 .copy-status.ok {
-  color: #22ff88;
+  color: #24ff8b;
+  font-size: 13px;
+  margin-top: 4px;
 }
 
 /* IMPORTANT */
 .important {
+  margin-top: 16px;
   font-size: 12px;
   color: #ffeec8;
-  margin-top: 16px;
 }
 
 /* BUTTON */
 .minted-btn {
   margin-top: 22px;
-  padding: 12px 36px;
-  background: #22c958;
-  color: #06270c;
-  border: none;
+  padding: 14px 36px;
   border-radius: 999px;
+  color: #06270c;
+  background: #22c958;
+  border: none;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.9);
-}
-
-@media (max-width: 640px) {
-  .mint-card {
-    margin: 16px;
-    padding-inline: 16px;
-  }
 }
