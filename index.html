@@ -59,6 +59,11 @@
     <img src="IMG_1059.png" alt="">
 </div>
 
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+</div>
+
 <div class="stage-section">
     <h3 class="stage-heading">Stage details</h3>
     <div class="stage-grid">
@@ -78,5 +83,39 @@
       <div class="tx-row"><div class="tx-left"><div class="tx-hash">c2616f0ffd...552f53ef</div><div class="tx-time">19.11.2025 07:01:10</div></div><div class="tx-amount">+0.075 ZEC</div></div>
     </div>
   </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const galleryImgs = document.querySelectorAll(".mint-gallery-2rows img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add("open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+  }
+
+  galleryImgs.forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openLightbox(img.src));
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+});
+</script>
+
 </body>
 </html>
