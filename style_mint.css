@@ -433,3 +433,81 @@
     .logo-title { font-size: 20px; }
     .logo-icon { width: 42px; height: 42px; font-size: 26px; }
 }
+
+/* GALLERY UNDER MINT DETAILS */
+.mint-gallery {
+    margin: 20px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.mint-gallery img {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 200, 0, 0.18);
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    transition: 0.25s;
+}
+.mint-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 200, 0, 0.3);
+}
+@media (max-width: 600px) {
+    .mint-gallery img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* === 2-ROW ANIMATED GALLERY === */
+.mint-gallery-2rows {
+    margin: 25px auto 45px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    width: 100%;
+    max-width: 760px;
+    animation: fadeIn 0.9s ease forwards;
+}
+.mint-gallery-2rows img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 200, 0, 0.18);
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: imgFade 1s ease forwards;
+}
+.mint-gallery-2rows img:nth-child(1){ animation-delay: 0.1s; }
+.mint-gallery-2rows img:nth-child(2){ animation-delay: 0.2s; }
+.mint-gallery-2rows img:nth-child(3){ animation-delay: 0.3s; }
+.mint-gallery-2rows img:nth-child(4){ animation-delay: 0.4s; }
+.mint-gallery-2rows img:nth-child(5){ animation-delay: 0.5s; }
+.mint-gallery-2rows img:nth-child(6){ animation-delay: 0.6s; }
+.mint-gallery-2rows img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px rgba(255, 200, 0, 0.35);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes imgFade {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 600px) {
+    .mint-gallery-2rows {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .mint-gallery-2rows img {
+        height: 140px;
+    }
+}
