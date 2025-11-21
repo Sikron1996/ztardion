@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #e8d3a3;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    z-index: 1;
+}
+
+.top-bar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 9px 18px;
+    border: 1px solid #8f6b2d;
+    border-radius: 30px;
+    color: #e8d3a3;
+    text-decoration: none;
+    font-size: 15px;
+    background: rgba(30, 22, 8, 0.6);
+}
+
+.logo {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #e8d3a3;
+}
+
+.logo span {
+    font-size: 13px;
+    display: block;
+    margin-top: 3px;
+    opacity: 0.7;
+}
+
+.airdrop-card {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 450px;
+    margin: 140px auto;
+    background: rgba(20, 14, 5, 0.85);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #8f6b2d;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+
+h1 {
+    color: #e8d3a3;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: #e8d3a3;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #8f6b2d;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    font-size: 15px;
+}
+
+.retweet-btn {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    background: #1d9bf0;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: linear-gradient(90deg, #0057ff, #4aa3ff);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
