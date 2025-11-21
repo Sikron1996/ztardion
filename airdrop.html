@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZTARDIO Airdrop</title>
     <link rel="stylesheet" href="style_airdrop.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
@@ -49,6 +48,38 @@
     </form>
 
 </div>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-box">
+    <h2>Airdrop Submitted!</h2>
+    <p>Your airdrop is on the way. Please wait — distribution will start soon.</p>
+
+    <button onclick="shareOnX()" class="share-btn">Share on X</button>
+    <button onclick="closePopup()" class="close-btn">Close</button>
+  </div>
+</div>
+
+<script>
+function showPopup() {
+  document.getElementById("successPopup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("successPopup").style.display = "none";
+}
+
+function shareOnX() {
+  const text = encodeURIComponent("Just joined the $ZTARDIO airdrop! 🚀🔥 #ZTARDIO #Zcash");
+  const url = encodeURIComponent("https://ztardio.xyz");
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+}
+
+document.getElementById("airdropForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    showPopup();
+});
+</script>
 
 </body>
 </html>
