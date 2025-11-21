@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Airdrop • ZTARDIO</title>
+<link rel="stylesheet" href="style_mint.css">
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="top-header">
+  <div class="logo-box"><div class="logo-icon">Z</div>
+    <div class="logo-texts"><div class="logo-title">ZTARDIO</div>
+      <div class="logo-sub">AIRDROP</div></div></div>
+
+  <div class="top-buttons">
+    <a href="index.html" class="top-btn">← Back to Home</a>
+  </div>
+</div>
+
+<div class="mint-card" style="padding:40px 30px; max-width:480px; margin:auto;">
+<h2 class="mint-heading">Airdrop Participation</h2>
+
+<form id="airForm" style="margin-top:25px; text-align:left;">
+<label>Twitter username *</label>
+<input type="text" id="tw" class="input" placeholder="@username" required>
+
+<label style="margin-top:20px;">Retweet this post *</label>
+<input type="text" id="rt" class="input" placeholder="Paste your retweet URL" required>
+
+<label style="margin-top:20px; display:flex; align-items:center;">
+<input type="checkbox" id="chk" style="width:20px; height:20px; margin-right:10px;" required>
+I confirm I retweeted the post
+</label>
+
+<label style="margin-top:20px;">ZEC Wallet *</label>
+<input type="text" id="zec" class="input" placeholder="t1..." required>
+
+<button type="submit" class="mint-button" style="margin-top:30px; width:100%;">Submit</button>
+</form>
+
+<p id="msg" style="text-align:center; margin-top:20px; color:#ffeec8;"></p>
+
+</div>
+
+<script>
+document.getElementById("airForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  let tw=document.getElementById("tw").value.trim();
+  let rt=document.getElementById("rt").value.trim();
+  let chk=document.getElementById("chk").checked;
+  let zec=document.getElementById("zec").value.trim();
+
+  if(!tw || !rt || !chk || !zec){
+    document.getElementById("msg").innerText="Please fill all required fields.";
+    return;
+  }
+  document.getElementById("msg").innerText="✔ Your data has been submitted (demo mode).";
+});
+</script>
+
+</body>
+</html>
