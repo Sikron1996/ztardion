@@ -7,6 +7,10 @@
     {
       "source": "/mint",
       "destination": "/mint.html"
+    },
+    {
+      "source": "/airdrop",
+      "destination": "/airdrop.html"
     }
   ]
 }
