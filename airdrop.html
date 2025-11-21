@@ -3,15 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Airdrop • ZTARDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style_mint.css">
+<style>
+*{font-family:'Inter',sans-serif!important;}
+</style>
 </head>
 <body>
 <div class="bg"></div>
 
 <div class="top-header">
-  <div class="logo-box"><div class="logo-icon">Z</div>
-    <div class="logo-texts"><div class="logo-title">ZTARDIO</div>
-      <div class="logo-sub">AIRDROP</div></div></div>
+  <div class="logo-box">
+    <div class="logo-icon">Z</div>
+    <div class="logo-texts">
+      <div class="logo-title">ZTARDIO</div>
+      <div class="logo-sub">AIRDROP</div>
+    </div>
+  </div>
 
   <div class="top-buttons">
     <a href="index.html" class="top-btn">← Back to Home</a>
@@ -22,15 +30,18 @@
 <h2 class="mint-heading">Airdrop Participation</h2>
 
 <form id="airForm" style="margin-top:25px; text-align:left;">
+
 <label>Twitter username *</label>
 <input type="text" id="tw" class="input" placeholder="@username" required>
 
-<label style="margin-top:20px;">Retweet this post *</label>
-<input type="text" id="rt" class="input" placeholder="Paste your retweet URL" required>
+<label style="margin-top:20px;">Step 1: Retweet this post *</label>
+<a href="https://x.com/puncatsape/status/1991507345940312175?s=46" target="_blank" class="mint-button" style="display:block; text-align:center; margin-top:10px;">
+Open Post & Retweet
+</a>
 
 <label style="margin-top:20px; display:flex; align-items:center;">
-<input type="checkbox" id="chk" style="width:20px; height:20px; margin-right:10px;" required>
-I confirm I retweeted the post
+  <input type="checkbox" id="chk" style="width:20px; height:20px; margin-right:10px;" required>
+  I confirm I retweeted the post
 </label>
 
 <label style="margin-top:20px;">ZEC Wallet *</label>
@@ -47,11 +58,10 @@ I confirm I retweeted the post
 document.getElementById("airForm").addEventListener("submit", function(e){
   e.preventDefault();
   let tw=document.getElementById("tw").value.trim();
-  let rt=document.getElementById("rt").value.trim();
   let chk=document.getElementById("chk").checked;
   let zec=document.getElementById("zec").value.trim();
 
-  if(!tw || !rt || !chk || !zec){
+  if(!tw || !chk || !zec){
     document.getElementById("msg").innerText="Please fill all required fields.";
     return;
   }
