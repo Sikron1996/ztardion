@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZTARDIO Airdrop</title>
     <link rel="stylesheet" href="style_airdrop.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     <form id="airdropForm">
 
         <label>Twitter username *</label>
-        <input type="text" placeholder="@username" required>
+        <input type="text" name="twitter" placeholder="@username" required>
 
         <div class="step-text">
             <strong>Step 1:</strong> Retweet this post
@@ -36,12 +37,12 @@
         </a>
 
         <label class="checkbox-row">
-            <input type="checkbox" required>
+            <input type="checkbox" name="confirmRT" required>
             <span>I confirm I retweeted the post</span>
         </label>
 
         <label>ZEC Wallet *</label>
-        <input type="text" placeholder="t1..." required>
+        <input type="text" name="zec" placeholder="t1..." required>
 
         <button type="submit" class="submit-btn">Submit</button>
 
@@ -67,6 +68,10 @@ function showPopup() {
 
 function closePopup() {
   document.getElementById("successPopup").style.display = "none";
+
+  // ОЧИЩЕННЯ ВСІХ ПОЛІВ
+  const form = document.getElementById("airdropForm");
+  form.reset();
 }
 
 function shareOnX() {
