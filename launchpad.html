@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZTARDIO • Launchpad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style_launchpad.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <header class="lp-header">
+    <div class="lp-header-left">
+      <div class="lp-logo">
+        <!-- Replace src with your actual logo image (e.g. /img/ztardio-face.png) -->
+        <img src="ztardio-face.png" alt="ZTARDIO logo" />
+      </div>
+      <div class="lp-brand">
+        <div class="lp-brand-title">ZTARDIO</div>
+        <div class="lp-brand-sub">LAUNCHPAD</div>
+      </div>
+    </div>
+
+    <nav class="lp-nav">
+      <a href="/" class="lp-nav-link">HOME</a>
+      <a href="/mint" class="lp-nav-link">MINT</a>
+      <a href="/marketplace" class="lp-nav-link">MARKETPLACE</a>
+      <a href="/launchpad" class="lp-nav-link lp-nav-link-active">LAUNCHPAD</a>
+      <button class="lp-connect-btn">CONNECT WALLET</button>
+    </nav>
+  </header>
+
+  <main class="lp-main">
+    <section class="lp-hero">
+      <div class="lp-hero-card">
+        <div class="lp-hero-left">
+          <!-- Main collection / mascot image -->
+          <div class="lp-hero-image">
+            <img src="ztardio-face-large.png" alt="ZTARDIO hero" />
+          </div>
+        </div>
+        <div class="lp-hero-right">
+          <h1 class="lp-hero-title">ZTARDIO Launchpad</h1>
+          <div class="lp-hero-tag-row">
+            <span class="lp-hero-tag">ZEC Collections</span>
+            <span class="lp-hero-tag lp-hero-tag-alt">Open Submissions</span>
+          </div>
+          <p class="lp-hero-text">
+            Launch your Zcash NFT inscription collection with ZTARDIO. Submit your project, configure
+            your mint details and let the community mint directly from the Launchpad.
+          </p>
+          <div class="lp-hero-actions">
+            <button class="lp-hero-primary">Create Collection</button>
+            <button class="lp-hero-secondary">View Collections</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-grid">
+      <div class="lp-panel">
+        <div class="lp-panel-title">Connected wallet</div>
+        <div class="lp-panel-body">
+          <div class="lp-wallet-status">Not connected</div>
+          <button class="lp-panel-btn">Connect wallet</button>
+        </div>
+      </div>
+
+      <div class="lp-panel">
+        <div class="lp-panel-title">Launch new collection</div>
+        <div class="lp-panel-body lp-launch-form">
+          <div class="lp-field">
+            <label>Collection name</label>
+            <input type="text" placeholder="ZTARDIO Punks" />
+          </div>
+          <div class="lp-field">
+            <label>Mint price (ZEC)</label>
+            <input type="text" placeholder="0.005" />
+          </div>
+          <div class="lp-field">
+            <label>Total supply</label>
+            <input type="number" placeholder="10000" />
+          </div>
+          <div class="lp-field">
+            <label>ZEC payout address</label>
+            <input type="text" placeholder="t1NosZVmmvKy4PSXEXLT15jEprc5YF3P8b6" />
+          </div>
+          <button class="lp-launch-btn">Create Collection (soon)</button>
+        </div>
+      </div>
+
+      <div class="lp-panel lp-panel-wide">
+        <div class="lp-panel-title">Featured collections</div>
+        <div class="lp-panel-body lp-collections-row">
+          <div class="lp-collection-card lp-collection-card-placeholder">
+            <div class="lp-collection-title">Coming soon</div>
+            <div class="lp-collection-sub">
+              Your ZEC collection can appear here once Launchpad goes live.
+            </div>
+          </div>
+          <div class="lp-collection-card lp-collection-card-placeholder">
+            <div class="lp-collection-title">Creator spots</div>
+            <div class="lp-collection-sub">
+              We will showcase curated inscription collections from the community.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-footer">
+    <span>ZTARDIO • Zcash Launchpad</span>
+    <span class="lp-footer-sep">•</span>
+    <span>Built for ZEC inscriptions &amp; collections</span>
+  </footer>
+</body>
+</html>
