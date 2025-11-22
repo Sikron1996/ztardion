@@ -11,6 +11,10 @@
     {
       "source": "/airdrop",
       "destination": "/airdrop.html"
+    },
+    {
+      "source": "/launchpad",
+      "destination": "/launchpad.html"
     }
   ]
 }
