@@ -347,3 +347,127 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+.mint-hero {
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.mint-container {
+    width: 95%;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+}
+
+.mint-hero-img img {
+    width: 310px;
+    height: auto;
+    border-radius: 14px;
+    border: 2px solid rgba(255,255,255,0.15);
+}
+
+.mint-hero-content { flex: 1; }
+
+.mint-hero-title {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.mint-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.tag {
+    padding: 6px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+}
+
+.mint-hero-desc {
+    color: #cccccc;
+    font-size: 15px;
+    max-width: 580px;
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+.mint-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.mint-stat-box {
+    width: 190px;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+
+.stat-label {
+    color: #a8a8a8;
+    font-size: 13px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: #fff;
+}
+
+.mint-progress-block { margin-bottom: 18px; }
+
+.progress-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #bbbbbb;
+    margin-bottom: 6px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 14px;
+}
+
+.progress-fill {
+    height: 12px;
+    background: #e0a72e;
+    border-radius: 14px;
+}
+
+.mint-btn {
+    padding: 14px 32px;
+    border: none;
+    background: #e0a72e;
+    color: #000;
+    font-weight: 600;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mint-btn:hover {
+    background: #f1c04b;
+}
+
