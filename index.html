@@ -1,132 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZTARDIO • Home</title>
 
-    
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZTARDIO • Presale</title>
-  <link rel="stylesheet" href="style_mint.css" />
-  <link rel="stylesheet" href="style_launchpad.css" />
+    <!-- Main styles -->
+    <link rel="stylesheet" href="style_mint.css" />
+    <link rel="stylesheet" href="style_launchpad.css" />
 </head>
+
 <body>
-  <div class="page-bg"></div>
-  <div class="bg"></div>
-  <header class="lp-header">
-    <div class="lp-header-left">
-      <div class="lp-logo">
-        <img src="bg.png" alt="ZTARDIO logo" />
-      </div>
-      <div class="lp-brand">
-        <div class="lp-brand-title">ZTARDIO</div>
-        <div class="lp-brand-sub">ZCASH • INSCRIPTIONS</div>
-      </div>
+    <!-- PAGE BG -->
+    <div class="page-bg"></div>
+
+    <!-- HEADER -->
+    <header class="lp-header">
+        <div class="lp-header-left">
+            <div class="lp-logo">
+                <img src="bg.png" alt="ZTARDIO logo" />
+            </div>
+            <div class="lp-brand">
+                <div class="lp-brand-title">ZTARDIO</div>
+                <div class="lp-brand-sub">ZCASH • INSCRIPTIONS</div>
+            </div>
+        </div>
+
+        <nav class="lp-nav">
+            <a href="/" class="lp-nav-link lp-nav-link-active">HOME</a>
+            <a href="/mint" class="lp-nav-link">MINT</a>
+            <a href="/marketplace" class="lp-nav-link">MARKETPLACE</a>
+            <a href="/airdrop" class="lp-nav-link">AIRDROP</a>
+            <a href="/launchpad" class="lp-nav-link">LAUNCHPAD</a>
+            <button class="lp-connect-btn">CONNECT WALLET</button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION (Mint Details) -->
+    <section class="lp-hero">
+        <div class="lp-hero-card">
+
+            <div class="lp-hero-left">
+                <div class="lp-hero-image">
+                    <img src="ztardio-face-large.png" alt="ZTARDIO Hero" />
+                </div>
+            </div>
+
+            <div class="lp-hero-right">
+                <h1 class="lp-hero-title">ZTARDIO Mint</h1>
+
+                <div class="lp-hero-tag-row">
+                    <span class="lp-hero-tag">ZEC Mint</span>
+                    <span class="lp-hero-tag lp-hero-tag-alt">Public Mint</span>
+                </div>
+
+                <p class="lp-hero-text">
+                    Mint your ZTARDIO inscription directly on Zcash. Fully on-chain permanent minting.
+                </p>
+
+                <!-- MINT STATS -->
+                <div class="home-stats-grid">
+                    <div class="home-stat-box">
+                        <div class="home-stat-label">TOTAL ITEMS</div>
+                        <div class="home-stat-value">10000</div>
+                    </div>
+                    <div class="home-stat-box">
+                        <div class="home-stat-label">MINT PRICE</div>
+                        <div class="home-stat-value">0.005 ZEC</div>
+                    </div>
+                    <div class="home-stat-box">
+                        <div class="home-stat-label">MINTED</div>
+                        <div class="home-stat-value">2520 / 10000</div>
+                    </div>
+                </div>
+
+                <!-- PROGRESS BAR -->
+                <div class="home-progress">
+                    <div class="home-progress-top">
+                        <span class="home-progress-label">PROGRESS</span>
+                        <span class="home-progress-text">2520 / 10000 minted</span>
+                    </div>
+                    <div class="home-progress-line">
+                        <div class="home-progress-bar"></div>
+                    </div>
+                </div>
+
+                <!-- MINT BUTTON -->
+                <div class="lp-hero-actions">
+                    <button class="lp-hero-primary" onclick="window.location='mint'">Mint Now</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <h3 class="section-heading">Gallery</h3>
+
+    <div class="mint-gallery-2rows">
+        <img src="IMG_1042.png" alt="">
+        <img src="IMG_1040.png" alt="">
+        <img src="IMG_1018.jpeg" alt="">
+        <img src="IMG_1062.png" alt="">
+        <img src="IMG_1060.png" alt="">
+        <img src="IMG_1059.png" alt="">
     </div>
 
-    <nav class="lp-nav">
-      <a href="/" class="lp-nav-link lp-nav-link-active">HOME</a>
-      <a href="/mint" class="lp-nav-link">MINT</a>
-      <a href="/marketplace" class="lp-nav-link">MARKETPLACE</a>
-      <a href="/airdrop" class="lp-nav-link">AIRDROP</a>
-      <a href="/launchpad" class="lp-nav-link">LAUNCHPAD</a>
-      <button class="lp-connect-btn">CONNECT WALLET</button>
-    </nav>
-  </header>
-<div class="home-card">
-    <div class="home-title-row">
-      <h2 class="home-heading">Mint details</h2>
-      <div class="stage-pill">PUBLIC MINT LIVE</div>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" src="" alt="">
     </div>
-    <div class="home-stats-grid">
-      <div class="home-stat-box"><div class="home-stat-label">TOTAL ITEMS</div><div class="home-stat-value">10000</div></div>
-      <div class="home-stat-box"><div class="home-stat-label">MINT PRICE</div><div class="home-stat-value">0.005 ZEC</div></div>
-      <div class="home-stat-box"><div class="home-stat-label">MINTED</div><div class="home-stat-value">2520 / 10000</div></div>
+
+    <!-- STAGE SECTION -->
+    <div class="stage-section">
+        <h3 class="stage-heading">Stage details</h3>
+        <div class="stage-grid">
+            <div class="stage-box">
+                <div class="stage-label">STAGE 1</div>
+                <p>Public Mint (FCFS)<br/>Price: <b>0.005 $ZEC</b></p>
+            </div>
+            <div class="stage-box">
+                <div class="stage-label">STAGE 2</div>
+                <p>Unlock: 2500 NFTs Airdrop Holders<br/>Price: <b>FREE $ZEC</b></p>
+            </div>
+        </div>
     </div>
-    <div class="home-progress">
-      <div class="home-progress-top">
-        <span class="home-progress-label">PROGRESS</span>
-        <span class="home-progress-text">2520 / 10000 minted</span>
-      </div>
-      <div class="home-progress-line"><div class="home-progress-bar"></div></div>
+
+    <!-- TRANSACTIONS -->
+    <div class="tx-section">
+        <h3 class="tx-heading">Recent transactions</h3>
+
+        <div class="tx-list">
+            <div class="tx-row">
+                <div class="tx-left">
+                    <div class="tx-hash">t1MGomfjn4...2DDW4eNbG</div>
+                    <div class="tx-time">21.11.2025 13:11:06</div>
+                </div>
+                <div class="tx-amount">+0.2 ZEC</div>
+            </div>
+
+            <div class="tx-row">
+                <div class="tx-left">
+                    <div class="tx-hash">t1ZXAeWaxT...vYMGMJGM</div>
+                    <div class="tx-time">20.11.2025 16:32:31</div>
+                </div>
+                <div class="tx-amount">+0.005 ZEC</div>
+            </div>
+
+            <div class="tx-row">
+                <div class="tx-left">
+                    <div class="tx-hash">93116bc037...5f76013d</div>
+                    <div class="tx-time">20.11.2025 09:14:42</div>
+                </div>
+                <div class="tx-amount">+0.01 ZEC</div>
+            </div>
+
+            <div class="tx-row">
+                <div class="tx-left">
+                    <div class="tx-hash">c2616f0ffd...552f53ef</div>
+                    <div class="tx-time">20.11.2025 09:01:10</div>
+                </div>
+                <div class="tx-amount">+0.075 ZEC</div>
+            </div>
+        </div>
     </div>
-    <button class="home-mint-btn" onclick="window.location='mint.html'">MINT</button>
-  </div>
-  
-  
 
+    <!-- LIGHTBOX JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const galleryImgs = document.querySelectorAll(".mint-gallery-2rows img");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.querySelector(".lightbox-img");
+            const closeBtn = document.querySelector(".lightbox-close");
 
-<h3 class="section-heading">Gallery</h3>
+            function openLightbox(src) {
+                lightboxImg.src = src;
+                lightbox.classList.add("open");
+            }
 
-<div class="mint-gallery-2rows">
-    <img src="IMG_1042.png" alt="">
-    <img src="IMG_1040.png" alt="">
-    <img src="IMG_1018.jpeg" alt="">
-    <img src="IMG_1062.png" alt="">
-    <img src="IMG_1060.png" alt="">
-    <img src="IMG_1059.png" alt="">
-</div>
+            function closeLightbox() {
+                lightbox.classList.remove("open");
+            }
 
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" src="" alt="">
-</div>
+            galleryImgs.forEach(img => {
+                img.style.cursor = "zoom-in";
+                img.addEventListener("click", () => openLightbox(img.src));
+            });
 
-<div class="stage-section">
-    <h3 class="stage-heading">Stage details</h3>
-    <div class="stage-grid">
-      <div class="stage-box">
-        <div class="stage-label">STAGE 1</div><p>Public Mint (FCFS)<br/>Price: <b>0.005 $ZEC</b></p>
-      </div>
-      <div class="stage-box">
-        <div class="stage-label">STAGE 2</div><p>Unlock: 2500 NFTs Airdrop Holders<br/>Price: <b>FREE $ZEC</b></p>
-      </div>
-    </div>
-  </div>
-  <div class="tx-section">
-    <h3 class="tx-heading">Recent transactions</h3>
-    <div class="tx-list">
-      <div class="tx-row"><div class="tx-left"><div class="tx-hash">t1MGomfjn4...2DDW4eNbG</div><div class="tx-time">21.11.2025 13:11:06</div></div><div class="tx-amount">+0.2 ZEC</div></div>
-      <div class="tx-row"><div class="tx-left"><div class="tx-hash">t1ZXAeWaxT...vYMGMJGM</div><div class="tx-time">20.11.2025 16:32:31</div></div><div class="tx-amount">+0.005 ZEC</div></div>
-      <div class="tx-row"><div class="tx-left"><div class="tx-hash">93116bc037...5f76013d</div><div class="tx-time">20.11.2025 09:14:42</div></div><div class="tx-amount">+0.01 ZEC</div></div>
-      <div class="tx-row"><div class="tx-left"><div class="tx-hash">c2616f0ffd...552f53ef</div><div class="tx-time">20.11.2025 09:01:10</div></div><div class="tx-amount">+0.075 ZEC</div></div>
-    </div>
-  </div>
+            closeBtn.addEventListener("click", closeLightbox);
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const galleryImgs = document.querySelectorAll(".mint-gallery-2rows img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.querySelector(".lightbox-img");
-  const closeBtn = document.querySelector(".lightbox-close");
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
 
-  function openLightbox(src) {
-    lightboxImg.src = src;
-    lightbox.classList.add("open");
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-  }
-
-  galleryImgs.forEach(img => {
-    img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => openLightbox(img.src));
-  });
-
-  closeBtn.addEventListener("click", closeLightbox);
-
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
-  });
-});
-</script>
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeLightbox();
+            });
+        });
+    </script>
 
 </body>
 </html>
